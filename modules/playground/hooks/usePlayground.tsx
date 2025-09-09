@@ -6,7 +6,7 @@ import { toast } from "sonner";
 
 interface PlaygroundData {
     id: string;
-    name?: string;
+    title?: string;
     [key: string]: any;
 }
 
