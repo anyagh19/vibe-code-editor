@@ -60,6 +60,8 @@ const WebContainerPreview = ({
     }
   }, [forceResetup]);
 
+  
+
   useEffect(() => {
     async function setupContainer() {
       if (!instance || isSetupComplete || isSetupInProgress) return;

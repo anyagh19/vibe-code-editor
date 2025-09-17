@@ -27,7 +27,7 @@ export const getPlaygroundById = async (id: string) => {
     }
 }
 
-export const saveUpdatedCode = async ( playgroundId: string , data: TemplateFolder) => {
+export const SaveUpdatedCode = async ( playgroundId: string , data: TemplateFolder) => {
     const user = await currentUser()
 
     if(!user) return null;

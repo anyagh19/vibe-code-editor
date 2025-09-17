@@ -334,7 +334,7 @@ function TemplateNode({
           setIsOpen={setIsDeleteDialogOpen}
           onConfirm={confirmDelete}
           title="Delete File"
-          description={'Are you sure you want to delete "{fileName}"? This action cannot be undone.'}
+          description={`Are you sure you want to delete "${fileName}"? This action cannot be undone.`}
           itemName={fileName}
           confirmLabel="Delete"
           cancelLabel="Cancel"
@@ -493,7 +493,7 @@ function TemplateNode({
           setIsOpen={setIsDeleteDialogOpen}
           onConfirm={confirmDelete}
           title="Delete Folder"
-          description={'Are you sure you want to delete "{folderName}" and all its contents? This action cannot be undone.'}
+          description={`Are you sure you want to delete "${folderName}" and all its contents? This action cannot be undone.`}
           itemName={folderName}
           confirmLabel="Delete"
           cancelLabel="Cancel"
