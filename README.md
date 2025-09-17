@@ -1,38 +1,102 @@
-# 🖥️ VibeCoder
+# 🧠 Vibecode Editor – AI-Powered Web IDE
 
-**VibeCoder** is a modern, web-based IDE built with **Next.js** that provides a fast, interactive development experience directly in your browser. It uses **Monaco Editor** for code editing, **WebContainers** to run code in-browser, and integrates **AI-powered code suggestions** using local **Ollama models** (like `gpt-oss` or `codellama`).
 
----
 
-## ✨ Features
-
-- ⚡ **Web-based IDE** — No installation needed, run and edit projects directly in the browser  
-- 💻 **Monaco Editor** — Fully-featured code editing experience with syntax highlighting and IntelliSense  
-- 📦 **WebContainer-powered runtime** — Execute code securely in the browser  
-- 🤖 **AI Code Suggestions** — Context-aware completions using locally hosted Ollama models  
-- 🎨 **Beautiful UI** — Built with Radix UI, TailwindCSS, and Shadcn components  
-- 🌙 **Theme Support** — Light / dark theme toggle  
-- 🔐 **Authentication** — Integrated using NextAuth with Prisma  
-- 💾 **Persistent Projects** — Save and load projects from your account  
+Vibecode Editor is a blazing-fast, AI-integrated web IDE built entirely in the browser using Next.js App Router, WebContainers, Monaco Editor, and local LLMs via Ollama. It offers real-time code execution, an AI-powered chat assistant, and support for multiple tech stacks — all wrapped in a stunning developer-first UI.
 
 ---
 
-## 🧠 Architecture Overview
+## 🚀 Features
 
-- **Frontend:** Next.js 15 + React 19 + TailwindCSS  
-- **Editor:** Monaco Editor (`@monaco-editor/react`)  
-- **Terminal:** xterm.js with multiple add-ons (fit, search, links)  
-- **Runtime:** WebContainers (`@webcontainer/api`)  
-- **AI Engine:** Ollama local LLM server (`http://localhost:11434/api/generate`)  
-- **Database:** Prisma ORM + any supported DB (PostgreSQL/MySQL/SQLite)  
-- **Auth:** NextAuth with Prisma adapter  
+* **🔐 OAuth Login with NextAuth** – Supports Google & GitHub login.
+* **🎨 Modern UI** – Built with TailwindCSS & ShadCN UI.
+* **🌗 Dark/Light Mode** – Seamlessly toggle between themes.
+* **🧱 Project Templates** – Choose from React, Next.js, Express, Hono, Vue, or Angular.
+* **🗂️ Custom File Explorer** – Create, rename, delete, and manage files/folders easily.
+* **🖊️ Enhanced Monaco Editor** – Syntax highlighting, formatting, keybindings, and AI autocomplete.
+* **💡 AI Suggestions with Ollama** – Local models give you code completion on `Ctrl + Space` or double `Enter`. Accept with `Tab`.
+* **⚙️ WebContainers Integration** – Instantly run frontend/backend apps right in the browser.
+* **💻 Terminal with xterm.js** – Fully interactive embedded terminal experience.
+* **🤖 AI Chat Assistant** – Share files with the AI and get help, refactors, or explanations.
 
 ---
 
-## 🚀 Getting Started
+## 🧱 Tech Stack
 
-### 1. Clone the repo
+| Layer | Technology |
+| :--- | :--- |
+| Framework | Next.js 15 (App Router) |
+| Styling | TailwindCSS, ShadCN UI |
+| Language | TypeScript |
+| Auth | NextAuth (Google + GitHub OAuth) |
+| Editor | Monaco Editor |
+| AI Suggestion | Ollama (LLMs running locally via Docker) |
+| Runtime | WebContainers |
+| Terminal | xterm.js |
+| Database | MongoDB (via `DATABASE_URL`) |
 
-```bash
-git clone https://github.com/anyagh19/vibe-code-editor.git
-cd vibecoder
+---
+
+## 🛠️ Getting Started
+
+### 1. Clone the Repo
+
+
+git clone [https://github.com/anyagh19/vibe-code-editor.git](https://github.com/anyagh19/vibe-code-editor.git).
+cd vibecode-editor
+
+### 2. Install Dependencies
+
+
+npm install
+### 3. Set Up Environment Variables
+Create a .env.local file using the template:
+
+
+
+cp .env.example .env.local
+Then, fill in your credentials:
+
+Ini, TOML
+
+* AUTH_SECRET=your_auth_secret.
+* AUTH_GOOGLE_ID=your_google_client_id.
+* AUTH_GOOGLE_SECRET=your_google_secret.
+* AUTH_GITHUB_ID=your_github_client_id.
+* AUTH_GITHUB_SECRET=your_github_secret.
+* DATABASE_URL=your_mongodb_connection_string.
+* NEXTAUTH_URL=http://localhost:3000.
+### 4. Start Local Ollama Model
+Make sure Ollama and Docker are installed, then run:
+
+
+
+ollama run codellama
+Or use your preferred model that supports code generation.
+
+### 5. Run the Development Server
+
+
+npm run dev
+Visit http://localhost:3000 in your browser.
+
+### 🎯 Keyboard Shortcuts
+Shortcut	Action
+* Ctrl + Space or Double Enter	Trigger AI suggestions.
+* Tab	Accept AI suggestion.
+/	Open Command Palette (if implemented)
+
+Export to Sheets
+### 📄 License
+This project is licensed under the MIT License.
+
+### 🙏 Acknowledgements
+Monaco Editor
+
+Ollama – for offline LLMs
+
+WebContainers
+
+xterm.js
+
+NextAuth.js
