@@ -38,7 +38,6 @@ import { useWebContainer } from "@/modules/webContainers/hooks/useWebContainer";
 
 import {
   AlertCircle,
-  Bot,
   FileText,
   FolderOpen,
   Save,
@@ -49,7 +48,6 @@ import { useParams } from "next/navigation";
 import React, {
   useCallback,
   useEffect,
-  useReducer,
   useRef,
   useState,
 } from "react";
