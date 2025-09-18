@@ -88,7 +88,8 @@ const MainPlaygroundPage = () => {
     error: containerError,
     instance,
     writeFileSync,
-    // @ts-expect-error
+    // @ts-expect-error needed to ignore type mismatch
+
 
   } = useWebContainer({ templateData });
 
@@ -201,10 +202,12 @@ const MainPlaygroundPage = () => {
           JSON.stringify(latestTemplateData)
         );
 
-        // @ts-expect-error
+        // @ts-expect-error needed to ignore type mismatch
+
 
         const updateFileContent = (items: any[]) =>
-          // @ts-expect-error
+          // @ts-expect-error needed to ignore type mismatch
+
 
           items.map((item) => {
             if ("folderName" in item) {
@@ -281,8 +284,8 @@ const MainPlaygroundPage = () => {
     try {
       await Promise.all(unsavedFiles.map((f) => handleSave(f.id)));
       toast.success(`Saved ${unsavedFiles.length} file(s)`);
-    } catch (error) {
-      toast.error("Failed to save some files");
+    } catch (error : any) {
+      toast.error("Failed to save some files", error);
     }
   };
 
