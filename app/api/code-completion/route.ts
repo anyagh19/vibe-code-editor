@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
         generatedAt: new Date().toISOString(),
       },
     });
-  } catch (error: any) {
+  } catch (error: string | any) {
     console.error("Context analysis error:", error);
     return NextResponse.json(
       { error: "Internal server error", message: error.message },

@@ -25,7 +25,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
     return (
         <SidebarProvider>
             <div className="flex min-h-screen w-full overflow-x-hidden">
-                {/* @ts-ignore */}
+                {/* @ts-expect-error */}
                 <DashboardSidebar initialPlaygroundData={formattedPlaygroundData} />
 
                 <main className="flex-1">
