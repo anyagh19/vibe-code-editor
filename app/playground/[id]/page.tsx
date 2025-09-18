@@ -32,6 +32,7 @@ import { findFilePath } from "@/modules/playground/lib";
 import {
   TemplateFile,
   TemplateFolder,
+  TemplateItem,
 } from "@/modules/playground/lib/path-to-json";
 import WebContainerPreview from "@/modules/webContainers/components/webContainer-preview";
 import { useWebContainer } from "@/modules/webContainers/hooks/useWebContainer";
@@ -205,7 +206,7 @@ const MainPlaygroundPage = () => {
         // @ts-expect-error needed to ignore type mismatch
 
 
-        const updateFileContent = (items: any[]) =>
+        const updateFileContent = (items: TemplateItem[]) =>
           // @ts-expect-error needed to ignore type mismatch
 
 
@@ -285,8 +286,9 @@ const MainPlaygroundPage = () => {
     try {
       await Promise.all(unsavedFiles.map((f) => handleSave(f.id)));
       toast.success(`Saved ${unsavedFiles.length} file(s)`);
-    } catch (error : any) {
-      toast.error("Failed to save some files", error);
+    } catch (error : unknown) {
+      console.error("Error saving all files:", error);
+      //toast.error("Failed to save some files", (error as Error).message);
     }
   };
 
