@@ -235,7 +235,8 @@ const MainPlaygroundPage = () => {
         
 
         const newTemplateData = await saveTemplateData(updatedTemplateData);
-        //@ts-ignore
+        // @ts-expect-error needed to ignore type mismatch
+
         setTemplateData(newTemplateData || updatedTemplateData);
         // Update open files
         const updatedOpenFiles = openFiles.map((f) =>

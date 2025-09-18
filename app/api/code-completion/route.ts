@@ -58,10 +58,10 @@ export async function POST(request: NextRequest) {
         generatedAt: new Date().toISOString(),
       },
     });
-  } catch (error: string | any) {
+  } catch (error: unknown) {
     console.error("Context analysis error:", error);
     return NextResponse.json(
-      { error: "Internal server error", message: error.message },
+      { error: "Internal server error", message: (error as Error).message },
       { status: 500 }
     );
   }
