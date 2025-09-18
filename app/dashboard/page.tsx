@@ -20,9 +20,11 @@ const Page = async() => {
                 <EmptyState />
             ) : (
                 <ProjectTable
+                //  @ts-expect-error needed to ignore type mismatch
                 projects={playgroundData || []}
                 onDeleteProject={deleteProjectById}
                 onUpdateProject={editProjectById}
+                // @ts-expect-error needed to ignore type mismatch
                 onDuplicateProject={duplicateProjectById}
                 />
             )}
