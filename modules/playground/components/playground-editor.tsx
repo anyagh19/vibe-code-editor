@@ -121,8 +121,15 @@ export const PlaygroundEditor = ({
             ],
           }
         },
+        // Legacy/free hook kept for compatibility
         freeInlineCompletions: (completions: any) => {
           console.log("freeInlineCompletions called")
+        },
+        // Required by newer Monaco types: disposeInlineCompletions
+        disposeInlineCompletions: (completions: any, reason: any) => {
+          console.log("disposeInlineCompletions called", { reason })
+          // If needed, perform any cleanup of completions here.
+          // Keep freeInlineCompletions for backward compatibility.
         },
       }
     },
